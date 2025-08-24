@@ -1,66 +1,66 @@
 # Digital Inker (MVP)
 
-This is the Minimum Viable Product (MVP) of the Digital Inker application. It allows a user to select a single PNG file containing handwritten Japanese/English text and convert it into machine-readable text using OCR.
+これはDigital InkerアプリケーションのMVP（Minimum Viable Product）版です。ユーザーは手書きの日本語/英語テキストを含む単一のPNGファイルを選択し、OCRを使用して機械が読み取り可能なテキストに変換することができます。
 
-## Prerequisites
+## 事前準備
 
-This application requires the Tesseract OCR engine to be installed on your system.
+このアプリケーションを実行するには、お使いのシステムにTesseract OCRエンジンがインストールされている必要があります。
 
-### For Ubuntu Linux
+### Ubuntu Linux の場合
 
-Open a terminal and run the following commands to install Tesseract and its Japanese language pack:
+ターミナルを開き、以下のコマンドを実行してTesseractと日本語言語パックをインストールします。
 
 ```bash
 sudo apt-get update
 sudo apt-get install tesseract-ocr tesseract-ocr-jpn
 ```
 
-### For Windows
+### Windows の場合
 
-1.  **Download the Tesseract Installer**:
-    *   Download the official Tesseract installer for Windows from the [Tesseract at UB Mannheim](https://github.com/UB-Mannheim/tesseract/wiki) page. It is recommended to download the latest stable version.
+1.  **Tesseract インストーラーのダウンロード**:
+    *   [Tesseract at UB Mannheim](https://github.com/UB-Mannheim/tesseract/wiki) のページから、Windows用の公式Tesseractインストーラーをダウンロードします。最新の安定版をダウンロードすることをお勧めします。
 
-2.  **Run the Installer**:
-    *   Run the downloaded `.exe` file.
-    *   During installation, make sure to select the "Japanese" language data component to include support for Japanese OCR.
+2.  **インストーラーの実行**:
+    *   ダウンロードした `.exe` ファイルを実行します。
+    *   インストールの際、日本語OCRのサポートを有効にするために、必ず「Japanese」言語データコンポーネントを選択してください。
 
-3.  **Add Tesseract to your PATH**:
-    *   After installation, you must add the Tesseract installation folder (e.g., `C:\Program Files\Tesseract-OCR`) to your system's `PATH` environment variable. This allows the application to find the Tesseract executable.
-    *   You can find instructions on how to add a directory to your PATH by searching online for "how to edit environment variables in Windows".
+3.  **Tesseract を PATH に追加**:
+    *   インストール後、Tesseractのインストールフォルダ（例: `C:\Program Files\Tesseract-OCR`）をシステムの `PATH` 環境変数に追加する必要があります。これにより、アプリケーションがTesseractの実行ファイルを見つけられるようになります。
+    *   PATHにディレクトリを追加する方法については、「Windows 環境変数の編集」などで検索して手順をご確認ください。
 
-## Installation
+## インストール
 
-Once the prerequisites are met, follow these steps to set up the application.
+事前準備が完了したら、以下の手順でアプリケーションをセットアップします。
 
-1.  **Clone the Repository (or download the files)**:
-    *   Get the project files onto your local machine.
+1.  **リポジトリのクローン（またはファイルのダウンロード）**:
+    *   プロジェクトファイルをお使いのローカルマシンに取得します。
 
-2.  **Create a Virtual Environment (Recommended)**:
-    *   It is highly recommended to use a Python virtual environment to avoid conflicts with other projects.
+2.  **仮想環境の作成（推奨）**:
+    *   他のプロジェクトとの競合を避けるため、Pythonの仮想環境を使用することを強くお勧めします。
     ```bash
     python -m venv venv
-    # On Windows
+    # Windowsの場合
     venv\Scripts\activate
-    # On macOS/Linux
+    # macOS/Linuxの場合
     source venv/bin/activate
     ```
 
-3.  **Install Dependencies**:
-    *   Install all required Python libraries using the `requirements.txt` file.
+3.  **依存関係のインストール**:
+    *   `requirements.txt` ファイルを使って、必要なすべてのPythonライブラリをインストールします。
     ```bash
     pip install -r requirements.txt
     ```
 
-## Usage
+## 使い方
 
-To run the application, execute the `main.py` script from your terminal:
+アプリケーションを実行するには、ターミナルから `main.py` スクリプトを実行します。
 
 ```bash
 python main.py
 ```
 
-This will launch the GUI. From there, you can:
-1.  Click "Select PNG File" to choose an image.
-2.  Click "Start Conversion" to perform the OCR.
-3.  The results will appear in the text area and will also be saved as a `_output.txt` file in the same directory as your image.
-4.  Click "Copy to Clipboard" to copy the results.
+これによりGUIが起動します。GUIからは以下の操作が可能です:
+1.  「PNGファイルを選択」をクリックして画像を選びます。
+2.  「変換開始」をクリックしてOCR処理を実行します。
+3.  結果はテキストエリアに表示され、同時に画像と同じディレクトリに `_output.txt` ファイルとして保存されます。
+4.  「結果をクリップボードにコピー」をクリックして結果をコピーします。
